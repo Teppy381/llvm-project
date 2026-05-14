@@ -1254,6 +1254,11 @@ def extloadv4f16 : PatFrag<(ops node:$ptr), (extloadvf16 node:$ptr)>;
 def extloadv8f16 : PatFrag<(ops node:$ptr), (extloadvf16 node:$ptr)>;
 def extloadv16f16 : PatFrag<(ops node:$ptr), (extloadvf16 node:$ptr)>;
 
+// Matches either 'store' or 'atomic_store' (any alignment, any ordering).
+def memstore : PatFrags<(ops node:$val, node:$ptr),
+                        [(store node:$val, node:$ptr),
+                         (atomic_store node:$val, node:$ptr)]>;
+
 // Like 'store', but always requires vector size alignment.
 def alignedstore : PatFrag<(ops node:$val, node:$ptr),
                            (store node:$val, node:$ptr), [{
