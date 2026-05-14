@@ -3356,7 +3356,7 @@ multiclass avx512_load_vl<bits<8> opc, string OpcodeStr,
 }
 
 multiclass avx512_store<bits<8> opc, string OpcodeStr, string BaseName,
-                        X86VectorVTInfo _, PatFrag st_frag, PatFrag mstore,
+                        X86VectorVTInfo _, PatFrags st_frag, PatFrag mstore,
                         X86SchedWriteMoveLS Sched, bit NoMRPattern = 0> {
   let hasSideEffects = 0, isCodeGenOnly = 1, ForceDisassemble = 1 in {
   let isMoveReg = 1 in
