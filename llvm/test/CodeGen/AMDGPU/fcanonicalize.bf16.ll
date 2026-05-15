@@ -1309,7 +1309,7 @@ define <2 x bfloat> @v_test_canonicalize_reg_k_v2bf16(bfloat %val) #1 {
 ; REAL16-NEXT:    s_delay_alu instid0(VALU_DEP_1) | instskip(NEXT) | instid1(VALU_DEP_1)
 ; REAL16-NEXT:    v_max_num_f32_e32 v0, v0, v0
 ; REAL16-NEXT:    v_cvt_pk_bf16_f32 v1, v0, s0
-; REAL16-NEXT:    v_mov_b16_e32 v0.h, 0x4000
+; REAL16-NEXT:    v_mov_b16_e32 v0.h, 2.0
 ; REAL16-NEXT:    s_delay_alu instid0(VALU_DEP_2)
 ; REAL16-NEXT:    v_mov_b16_e32 v0.l, v1.l
 ; REAL16-NEXT:    s_set_pc_i64 s[30:31]
@@ -1341,7 +1341,7 @@ define <2 x bfloat> @v_test_canonicalize_k_reg_v2bf16(bfloat %val) #1 {
 ; REAL16-NEXT:    s_delay_alu instid0(VALU_DEP_1) | instskip(NEXT) | instid1(VALU_DEP_1)
 ; REAL16-NEXT:    v_max_num_f32_e32 v0, v0, v0
 ; REAL16-NEXT:    v_cvt_pk_bf16_f32 v1, v0, s0
-; REAL16-NEXT:    v_mov_b16_e32 v0.l, 0x4000
+; REAL16-NEXT:    v_mov_b16_e32 v0.l, 2.0
 ; REAL16-NEXT:    s_delay_alu instid0(VALU_DEP_2)
 ; REAL16-NEXT:    v_mov_b16_e32 v0.h, v1.l
 ; REAL16-NEXT:    s_set_pc_i64 s[30:31]
